@@ -4,26 +4,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="org.wbt11a.nativecamera"
     version="0.1.4">
-    
+
     <name>Native Camera</name>
-    
+
     <engines>
         <engine name="cordova" version=">=3.0.0" />
     </engines>
-    
-    <description>Android Native Camera with Flash, Rear Facing Camera, Autozoom.  iOS Camera mirror of Apache Camera (cordova-plugin-camera)</description>
-    
-    <author>wezka-nativecamera</author>
-    
-    <keywords>cordova,camera,flash</keywords>
-    
-    <license>MIT</license>
-    
-    
-    <repo>https://github.com/wbt11a/cordova-plugin-wezka-nativecamera.git</repo>
-   
 
-    
+    <description>Android Native Camera with Flash, Rear Facing Camera, Autozoom.  iOS Camera mirror of Apache Camera (cordova-plugin-camera)</description>
+
+    <author>wezka-nativecamera</author>
+
+    <keywords>cordova,camera,flash</keywords>
+
+    <license>MIT</license>
+
+
+    <repo>https://github.com/wbt11a/cordova-plugin-wezka-nativecamera.git</repo>
+
+
+
     <js-module src="www/CameraConstants.js" name="Camera">
         <clobbers target="Camera" />
     </js-module>
@@ -33,7 +33,7 @@
     </js-module>
 
     <js-module src="www/Camera.js" name="camera">
-        <clobbers target="navigator.camera" />
+        <clobbers target="navigator.cameraCustom" />
     </js-module>
 
     <!-- android -->
@@ -51,10 +51,10 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity 
-                android:label="nativecameraplugin" 
-                android:name="org.wbt11a.nativecamera.CameraActivity" 
-                android:screenOrientation="portrait" 
+            <activity
+                android:label="nativecameraplugin"
+                android:name="org.wbt11a.nativecamera.CameraActivity"
+                android:screenOrientation="portrait"
                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             </activity>
         </config-file>
@@ -73,7 +73,7 @@
         <js-module src="www/CameraPopoverHandle.js" name="CameraPopoverHandle">
             <clobbers target="CameraPopoverHandle" />
         </js-module>
-      
+
      </platform>
 
       <!-- ios -->
@@ -84,11 +84,11 @@
              </feature>
              <preference name="CameraUsesGeolocation" value="false" />
          </config-file>
-         
+
          <js-module src="www/ios/CameraPopoverHandle.js" name="CameraPopoverHandle">
              <clobbers target="CameraPopoverHandle" />
          </js-module>
-         
+
          <header-file src="src/ios/UIImage+CropScaleOrientation.h" />
          <source-file src="src/ios/UIImage+CropScaleOrientation.m" />
          <header-file src="src/ios/CDVCamera.h" />
@@ -103,7 +103,7 @@
          <framework src="MobileCoreServices.framework" />
          <framework src="CoreGraphics.framework" />
          <framework src="AVFoundation.framework" />
-         
+
          <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
              <string></string>
          </config-file>
@@ -125,5 +125,5 @@
         </js-module>
 
     </platform>
-          
+
 </plugin>
